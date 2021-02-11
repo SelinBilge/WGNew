@@ -14,6 +14,8 @@
 		D1B9540B25D4025A00605EFD /* WG_Projekt.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540925D4025A00605EFD /* WG_Projekt.xcdatamodeld */; };
 		D1B9540D25D4025D00605EFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1B9540C25D4025D00605EFD /* Assets.xcassets */; };
 		D1B9541025D4025D00605EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */; };
+		D1B9541825D4054000605EFD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541725D4054000605EFD /* GradientView.swift */; };
+		D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541925D4056E00605EFD /* ProfileScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		D1B9540C25D4025D00605EFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1B9540F25D4025D00605EFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1B9541125D4025D00605EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1B9541725D4054000605EFD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		D1B9541925D4056E00605EFD /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 				D1B9540225D4025A00605EFD /* SceneDelegate.swift */,
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
+				D1B9541725D4054000605EFD /* GradientView.swift */,
+				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
 				D1B9540C25D4025D00605EFD /* Assets.xcassets */,
 				D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */,
 				D1B9541125D4025D00605EFD /* Info.plist */,
@@ -142,7 +148,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B9540525D4025A00605EFD /* ViewController.swift in Sources */,
+				D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */,
 				D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */,
+				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
 				D1B9540B25D4025A00605EFD /* WG_Projekt.xcdatamodeld in Sources */,
 			);
