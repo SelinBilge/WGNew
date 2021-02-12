@@ -41,8 +41,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
+                                    <action selector="name:" destination="6ap-JY-30N" eventType="editingDidEnd" id="4k2-HD-T2Z"/>
                                     <action selector="name:" destination="Ie1-Ml-xdy" eventType="editingDidEnd" id="SVy-gb-IkP"/>
-                                    <action selector="name:" destination="6ap-JY-30N" eventType="editingDidEnd" id="hXD-7t-Q2G"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1SX-xE-dJu">
@@ -55,10 +55,10 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Passwort" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHA-fi-ne0">
-                                <rect key="frame" x="167.5" y="639" width="59.5" height="18.5"/>
+                                <rect key="frame" x="167.5" y="639.5" width="59.5" height="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <connections>
                                     <action selector="password:" destination="6ap-JY-30N" eventType="editingDidEnd" id="1D7-yy-5G7"/>
                                 </connections>
@@ -222,7 +222,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-My-MD4">
                                 <rect key="frame" x="100" y="393" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Test">
+                                <state key="normal" title="WG erstellen">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -251,12 +251,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-3l-KVV">
+                                <rect key="frame" x="100" y="513" width="214" height="30"/>
+                                <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iBA-My-MD4" firstAttribute="leading" secondItem="sOc-Di-mBz" secondAttribute="leading" constant="100" id="7S6-rd-Jcz"/>
                             <constraint firstItem="nL5-RG-27t" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="95f-6B-99F"/>
+                            <constraint firstItem="8ct-3l-KVV" firstAttribute="leading" secondItem="sOc-Di-mBz" secondAttribute="leading" constant="100" id="DoU-Qr-lNc"/>
                             <constraint firstItem="rh8-k4-wdd" firstAttribute="leading" secondItem="sOc-Di-mBz" secondAttribute="leading" constant="100" id="Nx4-c4-T9a"/>
+                            <constraint firstItem="8ct-3l-KVV" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="80" id="VxV-aX-CIh"/>
                             <constraint firstItem="rh8-k4-wdd" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="20" id="Xo4-jz-hVM"/>
                             <constraint firstItem="iBA-My-MD4" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="XzZ-f8-L93"/>
                             <constraint firstItem="7KJ-Na-atm" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="Ytq-sQ-gOx"/>
@@ -264,6 +273,7 @@
                             <constraint firstItem="7KJ-Na-atm" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="80" id="b4D-dV-8iF"/>
                             <constraint firstItem="ZMx-C7-qrj" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="j5e-Lk-faq"/>
                             <constraint firstItem="ZMx-C7-qrj" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="-200" id="k6b-36-XRd"/>
+                            <constraint firstItem="8ct-3l-KVV" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="mHp-sE-iGR"/>
                             <constraint firstItem="rh8-k4-wdd" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="sUu-mm-1bR"/>
                             <constraint firstItem="iBA-My-MD4" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="-40" id="uii-zQ-MSv"/>
                         </constraints>

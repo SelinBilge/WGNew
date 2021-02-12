@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		98AA3300C1F6FFA28AEF85A9 /* Pods_WG_Projekt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */; };
 		D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540025D4025A00605EFD /* AppDelegate.swift */; };
 		D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540225D4025A00605EFD /* SceneDelegate.swift */; };
 		D1B9540525D4025A00605EFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540425D4025A00605EFD /* ViewController.swift */; };
@@ -16,9 +17,13 @@
 		D1B9541025D4025D00605EFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */; };
 		D1B9541825D4054000605EFD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541725D4054000605EFD /* GradientView.swift */; };
 		D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541925D4056E00605EFD /* ProfileScreen.swift */; };
+		D1B9541C25D58B6C00605EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WG_Projekt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.release.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.release.xcconfig"; sourceTree = "<group>"; };
+		C69AA8CC3E9C242804787B8A /* Pods-WG-Projekt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.debug.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.debug.xcconfig"; sourceTree = "<group>"; };
 		D1B953FD25D4025A00605EFD /* WG-Projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WG-Projekt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B9540025D4025A00605EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1B9540225D4025A00605EFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		D1B9541125D4025D00605EFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D1B9541725D4054000605EFD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D1B9541925D4056E00605EFD /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
+		D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98AA3300C1F6FFA28AEF85A9 /* Pods_WG_Projekt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +55,8 @@
 			children = (
 				D1B953FF25D4025A00605EFD /* WG-Projekt */,
 				D1B953FE25D4025A00605EFD /* Products */,
+				D9E884EFCCD381362305C388 /* Pods */,
+				F23FF9E708BA3EC24C11881E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,10 +79,29 @@
 				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
 				D1B9540C25D4025D00605EFD /* Assets.xcassets */,
 				D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */,
+				D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */,
 				D1B9541125D4025D00605EFD /* Info.plist */,
 				D1B9540925D4025A00605EFD /* WG_Projekt.xcdatamodeld */,
 			);
 			path = "WG-Projekt";
+			sourceTree = "<group>";
+		};
+		D9E884EFCCD381362305C388 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C69AA8CC3E9C242804787B8A /* Pods-WG-Projekt.debug.xcconfig */,
+				6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		F23FF9E708BA3EC24C11881E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,9 +111,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D1B9541425D4025D00605EFD /* Build configuration list for PBXNativeTarget "WG-Projekt" */;
 			buildPhases = (
+				5FC0FECB6EA1E5A77474FD45 /* [CP] Check Pods Manifest.lock */,
 				D1B953F925D4025A00605EFD /* Sources */,
 				D1B953FA25D4025A00605EFD /* Frameworks */,
 				D1B953FB25D4025A00605EFD /* Resources */,
+				8344FC9328916C092DFDD169 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,12 +165,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B9541025D4025D00605EFD /* LaunchScreen.storyboard in Resources */,
+				D1B9541C25D58B6C00605EFD /* GoogleService-Info.plist in Resources */,
 				D1B9540D25D4025D00605EFD /* Assets.xcassets in Resources */,
 				D1B9540825D4025A00605EFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FC0FECB6EA1E5A77474FD45 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WG-Projekt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8344FC9328916C092DFDD169 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D1B953F925D4025A00605EFD /* Sources */ = {
@@ -294,6 +367,7 @@
 		};
 		D1B9541525D4025D00605EFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C69AA8CC3E9C242804787B8A /* Pods-WG-Projekt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -312,6 +386,7 @@
 		};
 		D1B9541625D4025D00605EFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
