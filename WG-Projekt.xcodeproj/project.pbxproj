@@ -18,12 +18,12 @@
 		D1B9541825D4054000605EFD /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541725D4054000605EFD /* GradientView.swift */; };
 		D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9541925D4056E00605EFD /* ProfileScreen.swift */; };
 		D1B9541C25D58B6C00605EFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */; };
-		DA50D4B925D69F64008C29BE /* PersonTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50D4B825D69F64008C29BE /* PersonTag.swift */; };
-		DA50D4BC25D69F7D008C29BE /* AddTodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50D4BB25D69F7D008C29BE /* AddTodoController.swift */; };
-		DA50D4BF25D69F8D008C29BE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50D4BE25D69F8D008C29BE /* CalendarViewController.swift */; };
-		DA50D4C225D69F9D008C29BE /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50D4C125D69F9D008C29BE /* TodoViewController.swift */; };
-		DA50D4C525D69FA6008C29BE /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA50D4C425D69FA6008C29BE /* TodoCell.swift */; };
-		DA50D4C825D6A007008C29BE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA50D4C725D6A007008C29BE /* Colors.xcassets */; };
+		DA01AC8125D6A660007E0B39 /* PersonTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8025D6A660007E0B39 /* PersonTag.swift */; };
+		DA01AC8525D6A6BC007E0B39 /* AddTodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8425D6A6BC007E0B39 /* AddTodoController.swift */; };
+		DA01AC8825D6A710007E0B39 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8725D6A710007E0B39 /* TodoCell.swift */; };
+		DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */; };
+		DA01AC8F25D6A79F007E0B39 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */; };
+		DA01AC9325D6A84E007E0B39 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA01AC9225D6A84E007E0B39 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,12 +42,12 @@
 		D1B9541725D4054000605EFD /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		D1B9541925D4056E00605EFD /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DA50D4B825D69F64008C29BE /* PersonTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonTag.swift; path = "../../../backup/WG-Projekt/WG-Projekt/PersonTag.swift"; sourceTree = "<group>"; };
-		DA50D4BB25D69F7D008C29BE /* AddTodoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTodoController.swift; path = "../../../backup/WG-Projekt/WG-Projekt/AddTodoController.swift"; sourceTree = "<group>"; };
-		DA50D4BE25D69F8D008C29BE /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "../../../backup/WG-Projekt/WG-Projekt/CalendarViewController.swift"; sourceTree = "<group>"; };
-		DA50D4C125D69F9D008C29BE /* TodoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewController.swift; path = "../../../backup/WG-Projekt/WG-Projekt/TodoViewController.swift"; sourceTree = "<group>"; };
-		DA50D4C425D69FA6008C29BE /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoCell.swift; path = "../../../backup/WG-Projekt/WG-Projekt/TodoCell.swift"; sourceTree = "<group>"; };
-		DA50D4C725D6A007008C29BE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Colors.xcassets; path = "../../../backup/WG-Projekt/WG-Projekt/Colors.xcassets"; sourceTree = "<group>"; };
+		DA01AC8025D6A660007E0B39 /* PersonTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTag.swift; sourceTree = "<group>"; };
+		DA01AC8425D6A6BC007E0B39 /* AddTodoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoController.swift; sourceTree = "<group>"; };
+		DA01AC8725D6A710007E0B39 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
+		DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		DA01AC9225D6A84E007E0B39 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,23 +83,23 @@
 		D1B953FF25D4025A00605EFD /* WG-Projekt */ = {
 			isa = PBXGroup;
 			children = (
-				DA50D4B825D69F64008C29BE /* PersonTag.swift */,
 				D1B9540025D4025A00605EFD /* AppDelegate.swift */,
-				DA50D4BB25D69F7D008C29BE /* AddTodoController.swift */,
 				D1B9540225D4025A00605EFD /* SceneDelegate.swift */,
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
+				DA01AC8025D6A660007E0B39 /* PersonTag.swift */,
 				D1B9541725D4054000605EFD /* GradientView.swift */,
-				DA50D4C725D6A007008C29BE /* Colors.xcassets */,
-				DA50D4BE25D69F8D008C29BE /* CalendarViewController.swift */,
-				DA50D4C125D69F9D008C29BE /* TodoViewController.swift */,
 				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
 				D1B9540C25D4025D00605EFD /* Assets.xcassets */,
 				D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */,
-				DA50D4C425D69FA6008C29BE /* TodoCell.swift */,
 				D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */,
 				D1B9541125D4025D00605EFD /* Info.plist */,
 				D1B9540925D4025A00605EFD /* WG_Projekt.xcdatamodeld */,
+				DA01AC8425D6A6BC007E0B39 /* AddTodoController.swift */,
+				DA01AC8725D6A710007E0B39 /* TodoCell.swift */,
+				DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */,
+				DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */,
+				DA01AC9225D6A84E007E0B39 /* Colors.xcassets */,
 			);
 			path = "WG-Projekt";
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA50D4C825D6A007008C29BE /* Colors.xcassets in Resources */,
+				DA01AC9325D6A84E007E0B39 /* Colors.xcassets in Resources */,
 				D1B9541025D4025D00605EFD /* LaunchScreen.storyboard in Resources */,
 				D1B9541C25D58B6C00605EFD /* GoogleService-Info.plist in Resources */,
 				D1B9540D25D4025D00605EFD /* Assets.xcassets in Resources */,
@@ -238,17 +238,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA50D4C225D69F9D008C29BE /* TodoViewController.swift in Sources */,
 				D1B9540525D4025A00605EFD /* ViewController.swift in Sources */,
+				DA01AC8525D6A6BC007E0B39 /* AddTodoController.swift in Sources */,
 				D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */,
 				D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */,
 				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
-				DA50D4BC25D69F7D008C29BE /* AddTodoController.swift in Sources */,
-				DA50D4C525D69FA6008C29BE /* TodoCell.swift in Sources */,
-				DA50D4BF25D69F8D008C29BE /* CalendarViewController.swift in Sources */,
+				DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */,
+				DA01AC8825D6A710007E0B39 /* TodoCell.swift in Sources */,
+				DA01AC8125D6A660007E0B39 /* PersonTag.swift in Sources */,
+				DA01AC8F25D6A79F007E0B39 /* TodoViewController.swift in Sources */,
 				D1B9540B25D4025A00605EFD /* WG_Projekt.xcdatamodeld in Sources */,
-				DA50D4B925D69F64008C29BE /* PersonTag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
