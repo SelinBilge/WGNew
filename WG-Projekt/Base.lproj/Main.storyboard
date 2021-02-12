@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Profile Screen-->
         <scene sceneID="lth-d2-i3u">
             <objects>
-                <viewController id="6ap-JY-30N" customClass="ProfileScreen" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NnU-LH-fts" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="6ap-JY-30N" customClass="ProfileScreen" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NnU-LH-fts" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -24,7 +26,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvJ-GT-670">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SvJ-GT-670">
                                 <rect key="frame" x="100" y="723" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
@@ -73,7 +75,8 @@
                                 <rect key="frame" x="95" y="553" width="64" height="50"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Trc-ck-XO4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zqj-nt-IR6" firstAttribute="centerY" secondItem="NnU-LH-fts" secondAttribute="centerY" constant="60" id="5V7-tR-lOu"/>
                             <constraint firstItem="wV3-Qc-Us8" firstAttribute="centerX" secondItem="NnU-LH-fts" secondAttribute="centerX" id="5ZI-4U-QMz"/>
@@ -95,7 +98,6 @@
                             <constraint firstItem="SvJ-GT-670" firstAttribute="centerY" secondItem="NnU-LH-fts" secondAttribute="centerY" constant="290" id="wdC-Fs-MZv"/>
                             <constraint firstItem="Yjn-bj-JrZ" firstAttribute="centerY" secondItem="NnU-LH-fts" secondAttribute="centerY" constant="200" id="xxD-0k-DD8"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Trc-ck-XO4"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,18 +122,18 @@
         <!--View Controller-->
         <scene sceneID="C4L-se-Nvz">
             <objects>
-                <viewController id="wQp-b6-N3d" customClass="ViewController" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kxY-Gy-7rD" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="wQp-b6-N3d" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kxY-Gy-7rD" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WG erstellen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39U-5w-VKw">
-                                <rect key="frame" x="119.5" y="138.5" width="175.5" height="39"/>
+                                <rect key="frame" x="119" y="138.5" width="176" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-06-m7k">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9i-06-m7k">
                                 <rect key="frame" x="100" y="563" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
@@ -169,7 +171,8 @@
                                 <rect key="frame" x="96.5" y="297" width="61" height="62"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="TmJ-f5-v8g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="wic-aI-L7T" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="7u4-X3-YgM"/>
                             <constraint firstItem="f74-3Y-T3b" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-50" id="8yl-G4-UNH"/>
@@ -189,7 +192,6 @@
                             <constraint firstItem="xip-7M-ofB" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="-120" id="y7S-cZ-mpb"/>
                             <constraint firstItem="xvF-lm-bW6" firstAttribute="centerY" secondItem="kxY-Gy-7rD" secondAttribute="centerY" constant="20" id="zVi-L9-RhU"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="TmJ-f5-v8g"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -208,8 +210,8 @@
         <!--View Controller-->
         <scene sceneID="zRG-dk-sSY">
             <objects>
-                <viewController id="h64-dS-txG" customClass="ViewController" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2eH-CL-Kyf" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="h64-dS-txG" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2eH-CL-Kyf" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -219,7 +221,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-My-MD4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBA-My-MD4">
                                 <rect key="frame" x="100" y="393" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="WG erstellen">
@@ -235,7 +237,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh8-k4-wdd">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rh8-k4-wdd">
                                 <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="WG beitreten">
@@ -246,12 +248,12 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ich habe bereits einen Account" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KJ-Na-atm">
-                                <rect key="frame" x="89" y="517.5" width="236" height="21"/>
+                                <rect key="frame" x="90" y="517.5" width="234.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-3l-KVV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ct-3l-KVV">
                                 <rect key="frame" x="100" y="513" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login">
@@ -259,7 +261,8 @@
                                 </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="sOc-Di-mBz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iBA-My-MD4" firstAttribute="leading" secondItem="sOc-Di-mBz" secondAttribute="leading" constant="100" id="7S6-rd-Jcz"/>
                             <constraint firstItem="nL5-RG-27t" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="95f-6B-99F"/>
@@ -277,7 +280,6 @@
                             <constraint firstItem="rh8-k4-wdd" firstAttribute="centerX" secondItem="2eH-CL-Kyf" secondAttribute="centerX" id="sUu-mm-1bR"/>
                             <constraint firstItem="iBA-My-MD4" firstAttribute="centerY" secondItem="2eH-CL-Kyf" secondAttribute="centerY" constant="-40" id="uii-zQ-MSv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="sOc-Di-mBz"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -300,8 +302,8 @@
                     <view key="view" contentMode="scaleToFill" id="cnH-Rk-fNX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="DJO-GO-0eh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Aufgaben" image="list.number" catalog="system" id="jYg-br-5D7"/>
                 </viewController>
@@ -316,14 +318,21 @@
                     <view key="view" contentMode="scaleToFill" id="B9b-vJ-0C4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-Mx-dRC" customClass="FSCalendar">
+                                <rect key="frame" x="103" y="199" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vJF-bM-XX9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Kalender" image="calendar" catalog="system" id="F7N-p1-j9Z"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qww-Fa-IwE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6638" y="2379"/>
+            <point key="canvasLocation" x="6637.68115942029" y="2378.5714285714284"/>
         </scene>
         <!--Einkaufen-->
         <scene sceneID="KPB-uj-RaN">
@@ -332,8 +341,8 @@
                     <view key="view" contentMode="scaleToFill" id="gUF-wU-ESm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Yvu-8d-Vvh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Einkaufen" image="cart" catalog="system" id="Sby-9a-goP"/>
                 </viewController>
@@ -364,8 +373,8 @@
         <!--View Controller-->
         <scene sceneID="P8j-Rk-yzX">
             <objects>
-                <viewController id="if0-gs-GIH" customClass="ViewController" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VEM-Y3-tl7" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="if0-gs-GIH" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VEM-Y3-tl7" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -375,7 +384,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-4i-dlh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwr-4i-dlh">
                                 <rect key="frame" x="100" y="393" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Code verschicken">
@@ -398,7 +407,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="61G-aU-dQk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="UnN-tL-eER" firstAttribute="centerX" secondItem="VEM-Y3-tl7" secondAttribute="centerX" id="1NI-7H-wTw"/>
                             <constraint firstItem="7Ki-YQ-iW1" firstAttribute="centerX" secondItem="VEM-Y3-tl7" secondAttribute="centerX" id="B5G-8C-nTi"/>
@@ -411,7 +421,6 @@
                             <constraint firstItem="dwr-4i-dlh" firstAttribute="leading" secondItem="61G-aU-dQk" secondAttribute="leading" constant="100" id="o4m-6B-fYI"/>
                             <constraint firstItem="FIA-8A-nO6" firstAttribute="centerY" secondItem="VEM-Y3-tl7" secondAttribute="centerY" constant="-190" id="oLx-7f-xiT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="61G-aU-dQk"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -430,8 +439,8 @@
         <!--View Controller-->
         <scene sceneID="WpD-Bh-ThG">
             <objects>
-                <viewController id="Bzx-ZR-FHv" customClass="ViewController" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DdR-sk-70V" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="Bzx-ZR-FHv" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DdR-sk-70V" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -441,7 +450,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-xh-hHj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlP-xh-hHj">
                                 <rect key="frame" x="100" y="453" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="weiter">
@@ -470,7 +479,8 @@
                                 <rect key="frame" x="96.5" y="297" width="61" height="62"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="xlb-Th-miw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SJ2-qn-J1y" firstAttribute="centerX" secondItem="DdR-sk-70V" secondAttribute="centerX" id="4H8-kB-owX"/>
                             <constraint firstItem="hlP-xh-hHj" firstAttribute="centerX" secondItem="DdR-sk-70V" secondAttribute="centerX" id="4ri-5E-P7W"/>
@@ -486,7 +496,6 @@
                             <constraint firstItem="7Ao-0T-HBz" firstAttribute="centerY" secondItem="DdR-sk-70V" secondAttribute="centerY" constant="-120" id="xl6-d1-VqI"/>
                             <constraint firstItem="I9l-qV-0in" firstAttribute="centerY" secondItem="DdR-sk-70V" secondAttribute="centerY" constant="-290" id="y4F-Vp-0cJ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="xlb-Th-miw"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -505,8 +514,8 @@
         <!--View Controller-->
         <scene sceneID="nur-Y1-HXb">
             <objects>
-                <viewController id="2EZ-Qn-cjM" customClass="ViewController" customModule="WG_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Yc2-KO-9W4" customClass="GradientView" customModule="WG_App" customModuleProvider="target">
+                <viewController id="2EZ-Qn-cjM" customClass="ViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yc2-KO-9W4" customClass="GradientView" customModule="WG_Projekt" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -516,7 +525,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKe-ot-xhM">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MKe-ot-xhM">
                                 <rect key="frame" x="100" y="513" width="214" height="30"/>
                                 <color key="backgroundColor" red="0.93718274109999999" green="0.74219492519999997" blue="0.25254405000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="einloggen">
@@ -551,7 +560,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="lIM-k4-dhB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EMu-tL-t5Z" firstAttribute="centerX" secondItem="Yc2-KO-9W4" secondAttribute="centerX" constant="-80" id="8ZP-6D-wP0"/>
                             <constraint firstItem="WAg-Ne-xwf" firstAttribute="centerX" secondItem="Yc2-KO-9W4" secondAttribute="centerX" id="AC3-Mj-7cx"/>
@@ -569,7 +579,6 @@
                             <constraint firstItem="Axq-tp-BUj" firstAttribute="centerY" secondItem="Yc2-KO-9W4" secondAttribute="centerY" constant="-50" id="xrL-TK-QTO"/>
                             <constraint firstItem="s2H-2g-wEs" firstAttribute="centerY" secondItem="Yc2-KO-9W4" secondAttribute="centerY" constant="-50" id="xz3-HI-OQk"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="lIM-k4-dhB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="topColor">
                                 <color key="value" red="0.1033366473" green="0.88747178920000003" blue="0.93981995559999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -616,5 +625,8 @@
         <image name="mail_white" width="64" height="50"/>
         <image name="name_white" width="63" height="50"/>
         <image name="profile" width="265" height="253"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
