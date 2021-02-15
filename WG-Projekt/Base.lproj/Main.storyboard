@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -144,7 +144,6 @@
                                 </state>
                                 <connections>
                                     <action selector="nextButton:" destination="wQp-b6-N3d" eventType="touchUpInside" id="xsq-7P-dma"/>
-                                    <segue destination="if0-gs-GIH" kind="show" identifier="shareWG" id="DOD-RT-ARa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wic-aI-L7T">
@@ -219,6 +218,7 @@
                         <outlet property="emailtext" destination="wic-aI-L7T" id="WI3-h6-UKH"/>
                         <outlet property="nameofWg" destination="xip-7M-ofB" id="X4Z-VR-YuM"/>
                         <outlet property="passworttext" destination="xvF-lm-bW6" id="Qqy-QX-heV"/>
+                        <segue destination="if0-gs-GIH" kind="show" identifier="shareWG" id="xPt-X3-rYD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKQ-gM-Z5w" sceneMemberID="firstResponder"/>
@@ -1659,7 +1659,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="egv-f8-iWU"/>
                     <connections>
-                        <outlet property="emailText" destination="Zft-KR-hk8" id="Wcx-tb-C8I"/>
+                        <outlet property="newEmailText" destination="Zft-KR-hk8" id="rLs-lh-B0Q"/>
                         <outlet property="passwordText" destination="dqO-Jn-bLq" id="yUu-Z7-nSi"/>
                     </connections>
                 </viewController>
@@ -1927,8 +1927,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cvc-2c-AH5"/>
-        <segue reference="mM9-tY-Oyp"/>
+        <segue reference="Xhc-o0-kHc"/>
+        <segue reference="FN5-1z-DRU"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="calendar" catalog="system" width="128" height="106"/>

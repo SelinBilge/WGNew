@@ -12,16 +12,16 @@ import FirebaseAuth
 class LogInScreen: UIViewController {
 
     
-    @IBOutlet weak var emailText: UITextField!
     
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var newEmailText: UITextField!
     
     @IBAction func email(_ sender: Any) {
-        if emailText.text != ""{
+        if newEmailText.text != ""{
             
             // email is not valid
-           if emailText.text!.isEmail == false {
+           if newEmailText.text!.isEmail == false {
                 
                 // SHOW TOAST MESSAGE
                 self.showToast(message: "Das ist keine Emailadresse", font: .systemFont(ofSize: 12.0))
@@ -30,12 +30,12 @@ class LogInScreen: UIViewController {
     }
     
     @IBAction func nextButton(_ sender: Any) {
-        let email = emailText.text!.trimmingCharacters(in: .newlines)
+        let email = newEmailText.text!.trimmingCharacters(in: .newlines)
         let password = passwordText.text!.trimmingCharacters(in: .newlines)
     
         
         // check if fields are empty
-        if email != "" && password != "" && emailText.text?.isEmail == true {
+        if email != "" && password != "" && newEmailText.text?.isEmail == true {
             
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
            
