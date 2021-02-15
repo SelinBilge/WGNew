@@ -24,6 +24,15 @@
 		DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */; };
 		DA01AC8F25D6A79F007E0B39 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */; };
 		DA01AC9325D6A84E007E0B39 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA01AC9225D6A84E007E0B39 /* Colors.xcassets */; };
+		DA57533C25D837EA003A880A /* CalendarDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57533B25D837EA003A880A /* CalendarDetailViewController.swift */; };
+		DA57533F25D8474B003A880A /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57533E25D8474B003A880A /* CalendarEventCell.swift */; };
+		DA57534225DA6443003A880A /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57534125DA6443003A880A /* CalendarCell.swift */; };
+		DA57535B25DA8E63003A880A /* PollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57535A25DA8E63003A880A /* PollViewController.swift */; };
+		DA57535F25DA8F0B003A880A /* PollCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57535E25DA8F0B003A880A /* PollCell.swift */; };
+		DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536225DA8F1B003A880A /* PollResultCell.swift */; };
+		DA57536625DA942F003A880A /* AddPollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536525DA942F003A880A /* AddPollViewController.swift */; };
+		DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536825DA9587003A880A /* PollOptionCell.swift */; };
+		DA57536C25DA9C24003A880A /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57536B25DA9C24003A880A /* ShoppingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,15 @@
 		DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		DA01AC9225D6A84E007E0B39 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DA57533B25D837EA003A880A /* CalendarDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDetailViewController.swift; sourceTree = "<group>"; };
+		DA57533E25D8474B003A880A /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
+		DA57534125DA6443003A880A /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		DA57535A25DA8E63003A880A /* PollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollViewController.swift; sourceTree = "<group>"; };
+		DA57535E25DA8F0B003A880A /* PollCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollCell.swift; sourceTree = "<group>"; };
+		DA57536225DA8F1B003A880A /* PollResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollResultCell.swift; sourceTree = "<group>"; };
+		DA57536525DA942F003A880A /* AddPollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPollViewController.swift; sourceTree = "<group>"; };
+		DA57536825DA9587003A880A /* PollOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PollOptionCell.swift; sourceTree = "<group>"; };
+		DA57536B25DA9C24003A880A /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +101,16 @@
 		D1B953FF25D4025A00605EFD /* WG-Projekt */ = {
 			isa = PBXGroup;
 			children = (
+				DA57535D25DA8EDD003A880A /* cells */,
 				D1B9540025D4025A00605EFD /* AppDelegate.swift */,
 				D1B9540225D4025A00605EFD /* SceneDelegate.swift */,
 				D1B9540425D4025A00605EFD /* ViewController.swift */,
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
+				DA57536B25DA9C24003A880A /* ShoppingViewController.swift */,
+				DA57536525DA942F003A880A /* AddPollViewController.swift */,
+				DA57535A25DA8E63003A880A /* PollViewController.swift */,
+				DA57534125DA6443003A880A /* CalendarCell.swift */,
+				DA57533E25D8474B003A880A /* CalendarEventCell.swift */,
 				DA01AC8025D6A660007E0B39 /* PersonTag.swift */,
 				D1B9541725D4054000605EFD /* GradientView.swift */,
 				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
@@ -100,6 +124,7 @@
 				DA01AC8A25D6A743007E0B39 /* CalendarViewController.swift */,
 				DA01AC8E25D6A79F007E0B39 /* TodoViewController.swift */,
 				DA01AC9225D6A84E007E0B39 /* Colors.xcassets */,
+				DA57533B25D837EA003A880A /* CalendarDetailViewController.swift */,
 			);
 			path = "WG-Projekt";
 			sourceTree = "<group>";
@@ -111,6 +136,16 @@
 				6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA57535D25DA8EDD003A880A /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				DA57535E25DA8F0B003A880A /* PollCell.swift */,
+				DA57536225DA8F1B003A880A /* PollResultCell.swift */,
+				DA57536825DA9587003A880A /* PollOptionCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		F23FF9E708BA3EC24C11881E /* Frameworks */ = {
@@ -238,12 +273,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA57535F25DA8F0B003A880A /* PollCell.swift in Sources */,
 				D1B9540525D4025A00605EFD /* ViewController.swift in Sources */,
+				DA57534225DA6443003A880A /* CalendarCell.swift in Sources */,
+				DA57533C25D837EA003A880A /* CalendarDetailViewController.swift in Sources */,
+				DA57533F25D8474B003A880A /* CalendarEventCell.swift in Sources */,
+				DA57535B25DA8E63003A880A /* PollViewController.swift in Sources */,
 				DA01AC8525D6A6BC007E0B39 /* AddTodoController.swift in Sources */,
 				D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */,
 				D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */,
+				DA57536625DA942F003A880A /* AddPollViewController.swift in Sources */,
 				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
+				DA57536325DA8F1B003A880A /* PollResultCell.swift in Sources */,
+				DA57536925DA9587003A880A /* PollOptionCell.swift in Sources */,
+				DA57536C25DA9C24003A880A /* ShoppingViewController.swift in Sources */,
 				DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */,
 				DA01AC8825D6A710007E0B39 /* TodoCell.swift in Sources */,
 				DA01AC8125D6A660007E0B39 /* PersonTag.swift in Sources */,

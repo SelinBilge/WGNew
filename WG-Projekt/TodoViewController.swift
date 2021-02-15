@@ -65,8 +65,8 @@ class TodoViewController: UIViewController {
 
         navigationController.navigationBar.barTintColor = UIColor(patternImage: flareGradientImage)
         
-        todoTable.rowHeight = 60
-        todoTable.estimatedRowHeight = 100
+        //todoTable.rowHeight = 60
+        //todoTable.estimatedRowHeight = 100
         todos = [
             Section(name: "bis Heute", entries: [
                         Todo(title: "Staubsaugen", done: false, person: "Paul", due: 0),]),
@@ -122,7 +122,7 @@ extension TodoViewController : UITableViewDataSource {
         let label = UILabel()
         label.frame = CGRect.init(x: 5, y: 5, width: headerView.frame.width-10, height: headerView.frame.height-10)
         label.text =  todos[section].name
-        label.font = label.font.withSize(20)
+        label.font = label.font.withSize(17)
         if(section == 2) {
             label.textColor = UIColor.gray
         } else {
