@@ -55,8 +55,7 @@ class ProfileScreen: UIViewController {
             emailText.resignFirstResponder()
             passwordText.resignFirstResponder()
          }
-    
-   
+       
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(animated)
            nameText.becomeFirstResponder()
@@ -64,7 +63,6 @@ class ProfileScreen: UIViewController {
            passwordText.becomeFirstResponder()
        }
 
-   
     @IBAction func name(_ sender: Any) {
     }
     
@@ -88,45 +86,73 @@ class ProfileScreen: UIViewController {
     
     @IBAction func nextButton(_ sender: Any) {
            
+        let username = nameText.text!.trimmingCharacters(in: .newlines)
+        let useremail = emailText.text!.trimmingCharacters(in: .newlines)
+        let userpassword = passwordText.text!.trimmingCharacters(in: .newlines)
         
-        if nameText.text != "" && emailText.text != "" && passwordText.text != "" && emailText.text?.isEmail == true {
+        if username != "" && useremail != "" && userpassword != "" && emailText.text?.isEmail == true {
+        
+            var created = false
+            var userID = ""
             
-            // create User
-            let username = nameText.text!.trimmingCharacters(in: .newlines)
-            let useremail = emailText.text!.trimmingCharacters(in: .newlines)
-            let userpassword = passwordText.text!.trimmingCharacters(in: .newlines)
+            var alreadySignedIn = Auth.auth().currentUser?.email
             
-            Auth.auth().createUser(withEmail: useremail, password: username) { (result, err) in
+            // check if user has already an account
+            if alreadySignedIn != useremail {
                 
-                // check for errors
-                if let err = err {
-                    self.showToast(message: "Error beim User erstellen", font: .systemFont(ofSize: 12.0))
+                // create User
+                FirebaseAuth.Auth.auth().createUser(withEmail: useremail, password: userpassword) { ( result, err)  in
                     
-                } else {
-                    // User erstellen
-                    let db = Firestore.firestore()
-                   
-                    db.collection("users").addDocument(data: ["name": username, "uid": result!.user.uid]) { (error) in
+                    // check for errors
+                    if  err == nil {
+                     
+                       self.showToast(message: "Error beim User erstellen", font: .systemFont(ofSize: 12.0))
                         
-                        if error != nil {
-                            self.showToast(message: "Error beim speichern in der Datenbank", font: .systemFont(ofSize: 12.0))
-                        }
+                    } else {
+                        created = true
+                        print("User created account")
                     }
                     
-                    // go to next screen
-                    self.performSegue(withIdentifier: "AfterProfile", sender: nil)
-                                
                     
+                    if created == true {
+                        
+                        var  userID = Auth.auth().currentUser!.uid
+                        print("Test UserID: \(userID)")
+
+                        // save in firestore
+                        let db = Firestore.firestore()
+
+                        // add a document with specific id -> is the user id
+                        db.collection("users").document(userID).setData(["name": username, "wgname":"", "wgpasswort":""]) { (error) in
+                            
+                            if let error = error {
+                                // error happened
+                                self.showToast(message: "Error beim speichern in der Datenbank", font: .systemFont(ofSize: 12.0))
+                            } else {
+                                self.showToast(message: "!User erstellt!", font: .systemFont(ofSize: 12.0))
+                                print("Saved in Firestore")
+                                
+                                // go to next screen
+                                self.performSegue(withIdentifier: "AfterProfile", sender: nil)
+                            }
+                            
+                        }
+                        
+
+    
+                        
+                        
+                    }
+                        
                 }
+                                  
                 
+            } else {
+                self.showToast(message: "Du bist schon registriert", font: .systemFont(ofSize: 12.0))
             }
             
-            
-            
-              
-            
+
            } else {
-                // SHOW TOAST MESSAGE
                 self.showToast(message: "Bitte fülle alle Felder aus", font: .systemFont(ofSize: 12.0))
            }
  

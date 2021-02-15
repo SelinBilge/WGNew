@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		98AA3300C1F6FFA28AEF85A9 /* Pods_WG_Projekt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */; };
+		D109113A25D7F30F00963A89 /* LogInCreateWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D109113925D7F30F00963A89 /* LogInCreateWG.swift */; };
+		D15BA1E825D7F77100752FA4 /* CreateWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA1E725D7F77100752FA4 /* CreateWG.swift */; };
+		D15BA1EB25D80CAE00752FA4 /* inviteToWg.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA1EA25D80CAE00752FA4 /* inviteToWg.swift */; };
+		D15BA20C25DA90A700752FA4 /* LogInWG.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BA20B25DA90A700752FA4 /* LogInWG.swift */; };
+		D18D201325D6E7FB00C186CA /* LogInScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18D201225D6E7FB00C186CA /* LogInScreen.swift */; };
 		D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540025D4025A00605EFD /* AppDelegate.swift */; };
 		D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540225D4025A00605EFD /* SceneDelegate.swift */; };
 		D1B9540525D4025A00605EFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B9540425D4025A00605EFD /* ViewController.swift */; };
@@ -30,6 +35,11 @@
 		0500734B57AFF307D297E381 /* Pods_WG_Projekt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WG_Projekt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BB64B01889918BD030D9C01 /* Pods-WG-Projekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.release.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.release.xcconfig"; sourceTree = "<group>"; };
 		C69AA8CC3E9C242804787B8A /* Pods-WG-Projekt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WG-Projekt.debug.xcconfig"; path = "Target Support Files/Pods-WG-Projekt/Pods-WG-Projekt.debug.xcconfig"; sourceTree = "<group>"; };
+		D109113925D7F30F00963A89 /* LogInCreateWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInCreateWG.swift; sourceTree = "<group>"; };
+		D15BA1E725D7F77100752FA4 /* CreateWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWG.swift; sourceTree = "<group>"; };
+		D15BA1EA25D80CAE00752FA4 /* inviteToWg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inviteToWg.swift; sourceTree = "<group>"; };
+		D15BA20B25DA90A700752FA4 /* LogInWG.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInWG.swift; sourceTree = "<group>"; };
+		D18D201225D6E7FB00C186CA /* LogInScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInScreen.swift; sourceTree = "<group>"; };
 		D1B953FD25D4025A00605EFD /* WG-Projekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WG-Projekt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1B9540025D4025A00605EFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1B9540225D4025A00605EFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +72,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D15BA1ED25D80DED00752FA4 /* createWG */ = {
+			isa = PBXGroup;
+			children = (
+				D15BA1E725D7F77100752FA4 /* CreateWG.swift */,
+				D15BA1EA25D80CAE00752FA4 /* inviteToWg.swift */,
+				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
+				D15BA20B25DA90A700752FA4 /* LogInWG.swift */,
+			);
+			path = createWG;
+			sourceTree = "<group>";
+		};
+		D15BA1F125D80E9700752FA4 /* joinWG */ = {
+			isa = PBXGroup;
+			children = (
+				D109113925D7F30F00963A89 /* LogInCreateWG.swift */,
+			);
+			path = joinWG;
+			sourceTree = "<group>";
+		};
+		D15BA1F325D80EC600752FA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D18D201225D6E7FB00C186CA /* LogInScreen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		D1B953F425D4025A00605EFD = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +126,9 @@
 				D1B9540625D4025A00605EFD /* Main.storyboard */,
 				DA01AC8025D6A660007E0B39 /* PersonTag.swift */,
 				D1B9541725D4054000605EFD /* GradientView.swift */,
-				D1B9541925D4056E00605EFD /* ProfileScreen.swift */,
+				D15BA1F325D80EC600752FA4 /* Login */,
+				D15BA1F125D80E9700752FA4 /* joinWG */,
+				D15BA1ED25D80DED00752FA4 /* createWG */,
 				D1B9540C25D4025D00605EFD /* Assets.xcassets */,
 				D1B9540E25D4025D00605EFD /* LaunchScreen.storyboard */,
 				D1B9541B25D58B6C00605EFD /* GoogleService-Info.plist */,
@@ -239,16 +278,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1B9540525D4025A00605EFD /* ViewController.swift in Sources */,
+				D15BA1EB25D80CAE00752FA4 /* inviteToWg.swift in Sources */,
+				D18D201325D6E7FB00C186CA /* LogInScreen.swift in Sources */,
 				DA01AC8525D6A6BC007E0B39 /* AddTodoController.swift in Sources */,
 				D1B9541A25D4056E00605EFD /* ProfileScreen.swift in Sources */,
 				D1B9540125D4025A00605EFD /* AppDelegate.swift in Sources */,
+				D15BA1E825D7F77100752FA4 /* CreateWG.swift in Sources */,
 				D1B9541825D4054000605EFD /* GradientView.swift in Sources */,
 				D1B9540325D4025A00605EFD /* SceneDelegate.swift in Sources */,
 				DA01AC8B25D6A743007E0B39 /* CalendarViewController.swift in Sources */,
+				D109113A25D7F30F00963A89 /* LogInCreateWG.swift in Sources */,
 				DA01AC8825D6A710007E0B39 /* TodoCell.swift in Sources */,
 				DA01AC8125D6A660007E0B39 /* PersonTag.swift in Sources */,
 				DA01AC8F25D6A79F007E0B39 /* TodoViewController.swift in Sources */,
 				D1B9540B25D4025A00605EFD /* WG_Projekt.xcdatamodeld in Sources */,
+				D15BA20C25DA90A700752FA4 /* LogInWG.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
