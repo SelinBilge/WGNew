@@ -31,8 +31,24 @@ struct Poll {
     var user: [String:Int]  //Map that stores the chosen option for each user, by default -1
     var options: [String]  //String Array with all options
     var till: Date
+    var finished: Bool
     var id: String
 }
+
+//Data Formatter for the Calendar -> repersentation of date without time for the user
+var dateFormatterFS: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "dd.MM.yyyy"
+    return formatter
+}()
+
+
+//Data Formatter for getting the time out of a date
+var dateFormatterTime: DateFormatter = {
+    let formatter = DateFormatter()
+    formatter.dateFormat = "HH:mm"
+    return formatter
+}()
 
 
 class CalendarViewController: UIViewController {
@@ -47,20 +63,6 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var calendar: FSCalendar!
     @IBOutlet weak var eventsTable: UITableView!
     
-    //Data Formatter for the Calendar -> repersentation of date without time for the user
-    var dateFormatterFS: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yyyy"
-        return formatter
-    }()
-    
-    //Data Formatter for getting the time out of a date
-    var dateFormatterTime: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter
-    }()
-    
     override func viewDidLoad() {
         //Navigation Bar setup
         super.viewDidLoad()
@@ -72,9 +74,6 @@ class CalendarViewController: UIViewController {
             return
         }
         navigationController.navigationBar.barTintColor = UIColor(patternImage: flareGradientImage)
-        
-        //Notifcation -> Todo replace with delegate
-        NotificationCenter.default.addObserver(self, selector: #selector(fetchPollData), name: NSNotification.Name(rawValue: "updatePoll"), object: nil)
         
         //set delegate and data source
         calendar.dataSource = self
@@ -93,18 +92,15 @@ class CalendarViewController: UIViewController {
         if(segue.identifier == "selectedDate") {
             //get chosen variables and set them in destination vc
             let vc = (segue.destination as! CalendarDetailViewController)
-            if(chosenEvents.count != 0) {
-                vc.hasEvents = true
-            } else {
-                vc.hasEvents = false
-            }
             vc.dateString = chosenDateString
             vc.events = chosenEvents
+            vc.delegate = self
         }
         if(segue.identifier == "showPoll") {
             //get chosen variables and set them in destination vc
             let vc = (segue.destination as! PollViewController)
             vc.poll = selectedPoll
+            vc.delegate = self
         }
     }
     
@@ -126,24 +122,29 @@ class CalendarViewController: UIViewController {
                     let stringDateF = data["date"] as! String
                     let date = dateFormatterFB.date(from: stringDateF)!
                     //Get time as string and date as string in the calendar format
-                    let timeString = self.dateFormatterTime.string(from: date)
-                    let stringDate = self.dateFormatterFS.string(from: date)
+                    let timeString = dateFormatterTime.string(from: date)
+                    let stringDate = dateFormatterFS.string(from: date)
                     //create event
                     let eventEntry: Event = Event(title: data["title"] as! String, date: date, time: timeString, description: data["description"] as! String, id: docSnapshot.documentID)
-                    //add to section if the section exiists, create a new one otherwise
-                    if let index = self.eventsArray.firstIndex(where: {$0.date == stringDate}) {
-                        self.eventsArray[index].events.append(eventEntry)
-                    } else {
-                       let newSection = CalendarSection(date: stringDate, events: [eventEntry])
-                        self.eventsArray.append(newSection)
+                    
+                    //check if date has not passed
+                    let order = Calendar.current.compare(Date(), to: date, toGranularity: .day)
+                    if(order != .orderedDescending){
+                        //add to section if the section exiists, create a new one otherwise
+                        if let index = self.eventsArray.firstIndex(where: {$0.date == stringDate}) {
+                            self.eventsArray[index].events.append(eventEntry)
+                        } else {
+                            let newSection = CalendarSection(date: stringDate, events: [eventEntry])
+                            self.eventsArray.append(newSection)
+                        }
                     }
                     
                 }
                 
                 //sort the sections
                 self.eventsArray.sort { (lhs: CalendarSection, rhs: CalendarSection) -> Bool in
-                    let lhsDate = self.dateFormatterFS.date(from: lhs.date)!
-                    let rhsDate = self.dateFormatterFS.date(from: rhs.date)!
+                    let lhsDate = dateFormatterFS.date(from: lhs.date)!
+                    let rhsDate = dateFormatterFS.date(from: rhs.date)!
                     return lhsDate < rhsDate
                 }
                 //sort the events in the sections
@@ -153,13 +154,14 @@ class CalendarViewController: UIViewController {
                     }
                 }
                 self.eventsTable.reloadData()
+                //reload calendar
                 self.calendar.reloadData()
             }
         }
     }
     
     // Fetch the poll entries from firestore.
-    @objc func fetchPollData() {
+    func fetchPollData() {
         polls = []
         let collectionRef = db.collection("poll").document("idx").collection("polls")
         collectionRef.getDocuments { (querySnapshot, err) in
@@ -167,12 +169,15 @@ class CalendarViewController: UIViewController {
                 for docSnapshot in docs {
                     let data = docSnapshot.data()
                     //get dateString and transform it to date
+                    let currentDate = Date()
                     let stringDate = data["till"] as! String
                     let date = dateFormatterFB.date(from: stringDate)!
-
-                    
-                    let pollEntry: Poll = Poll(title: data["title"] as! String, user: data["decisions"] as! [String:Int], options: data["options"] as! [String], till: date, id: docSnapshot.documentID)
-                    self.polls.append(pollEntry)
+                    var finished = false
+                    if(date < currentDate) {
+                        finished = true
+                    }
+                        let pollEntry: Poll = Poll(title: data["title"] as! String, user: data["decisions"] as! [String:Int], options: data["options"] as! [String], till: date, finished: finished, id: docSnapshot.documentID)
+                        self.polls.append(pollEntry)
                     
                 }
                 self.eventsTable.reloadData()
@@ -225,6 +230,33 @@ class CalendarViewController: UIViewController {
         }
     }
     
+    
+    //delete event from firestore and fetch data
+    func deleteEvent(id: String) {
+        let ref = db.collection("calendar").document("idx").collection("events").document(id)
+        ref.delete() { err in
+            if let err = err {
+                print("Unable to delete document, reason: \(err)")
+            } else {
+                print("Data deleted successfully")
+                self.fetchEventData()
+            }
+        }
+    }
+    
+    //Delete poll from firestore and fetch data
+    func deletePoll(id: String) {
+        let ref = db.collection("poll").document("idx").collection("polls").document(id)
+        ref.delete() { err in
+            if let err = err {
+                print("Unable to delete document, reason: \(err)")
+            } else {
+                print("Data deleted successfully")
+                self.fetchPollData()
+            }
+        }
+    }
+    
 }
 
 
@@ -233,7 +265,7 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource {
     //Sets points in calendar for events
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         //get date String
-        let dateString = self.dateFormatterFS.string(from: date)
+        let dateString = dateFormatterFS.string(from: date)
         //check if a section exists -> look how many events are on this day
         if let section = self.eventsArray.first(where: {$0.date == dateString}) {
             return section.events.count
@@ -244,7 +276,7 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource {
     //Handles click Event on calendar -> performes a segue to the CalendarDetailVC
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         //get date String
-        let dateString = self.dateFormatterFS.string(from: date)
+        let dateString = dateFormatterFS.string(from: date)
         
         //set variables that are used in the prepare method
         chosenDateString = dateString
@@ -262,10 +294,17 @@ extension CalendarViewController : FSCalendarDelegate, FSCalendarDataSource {
 
 extension CalendarViewController : UITableViewDelegate {
     
-    //Open PollVC when a poll is clicked
+    //Open PollVC when a poll is clicked, open CalendarDetailVC when event is clicked
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedPoll = polls[indexPath.row]
-        performSegue(withIdentifier: "showPoll", sender: nil)
+        if(indexPath.section > 0) {
+            let section = eventsArray[indexPath.section-1]
+            chosenEvents = section.events
+            chosenDateString = section.date
+            performSegue(withIdentifier: "selectedDate", sender: nil)
+        } else {
+            selectedPoll = polls[indexPath.row]
+            performSegue(withIdentifier: "showPoll", sender: nil)
+        }
     }
 
 }
@@ -312,14 +351,45 @@ extension CalendarViewController : UITableViewDataSource {
         //Properties are chosen depending on if its a poll or event section
         if(indexPath.section == 0) {
             //Poll: Depending on wether a user has voted, text is displayes
-            cell.eventTitle.text = polls[indexPath.row].title
+            var result = 0
+            var resultArray: Array<Int> = Array(repeating: 0, count: polls[indexPath.row].options.count)
+            for user in polls[indexPath.row].user {
+                if(user.value > -1){
+                    resultArray[user.value] += 1
+                }
+            }
             if(polls[indexPath.row].user["Paul"] != -1) {
-                cell.eventDetail.text = "abgestimmt"
+                result = resultArray[polls[indexPath.row].user["Paul"]!] - resultArray.max()!
+            }
+            cell.eventTitle.text = polls[indexPath.row].title
+            if(polls[indexPath.row].finished){
+                cell.eventDetail.text = "beendet"
+                if(polls[indexPath.row].user["Paul"] == -1) {
+                    cell.eventImage.isHidden = true
+                } else if(result >= 0) {
+                    cell.eventImage.image = UIImage(systemName: "person.3.fill")
+                    cell.eventImage.isHidden = false
+                } else {
+                    cell.eventImage.image = UIImage(systemName: "person.3")
+                    cell.eventImage.isHidden = false
+                }
+                
+            } else if(polls[indexPath.row].user["Paul"] != -1) {
+                cell.eventDetail.text = ""
+                if(result >= 0) {
+                    cell.eventImage.image = UIImage(systemName: "person.3.fill")
+                    cell.eventImage.isHidden = false
+                } else {
+                    cell.eventImage.image = UIImage(systemName: "person.3")
+                    cell.eventImage.isHidden = false
+                }
             } else {
-                cell.eventDetail.text = "Nicht abgestimmt"
+                cell.eventImage.isHidden = true
+                cell.eventDetail.text = "abstimmen"
             }
         } else {
             //Events
+            cell.eventImage.isHidden = true
             cell.eventTitle.text = eventsArray[indexPath.section-1].events[indexPath.row].title
             cell.eventDetail.text = eventsArray[indexPath.section-1].events[indexPath.row].time
         }
@@ -344,7 +414,13 @@ extension CalendarViewController : UITableViewDataSource {
         if(section == 0) {
             label.text = "Abstimmungen"
         } else {
-            label.text = eventsArray[section-1].date
+            let calendar = Calendar.current
+            let sectionDate = dateFormatterFS.date(from: eventsArray[section-1].date)
+            if(calendar.isDateInToday(sectionDate!)) {
+                label.text = "Heute"
+            } else {
+                label.text = eventsArray[section-1].date
+            }
         }
         
         //merge subviews
@@ -368,5 +444,50 @@ extension CalendarViewController : UITableViewDataSource {
         }
     }
     
+    // Delete Swipe Action Configuration
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                if(indexPath.section > 0) {
+                    let id = self.eventsArray[indexPath.section-1].events[indexPath.row].id
+                    self.deleteEvent(id: id)
+                } else {
+                    let id = self.polls[indexPath.row].id
+                    self.deletePoll(id: id)
+                }
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(systemName: "trash")
+            deleteAction.backgroundColor = .systemRed
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            configuration.performsFirstActionWithFullSwipe = false
+            return configuration
+    }
+
+    //Delete Style
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        if let swipeContainerView = tableView.subviews.first(where: { String(describing: type(of: $0)) == "_UITableViewCellSwipeContainerView" }) {
+          if let swipeActionPullView = swipeContainerView.subviews.first, String(describing: type(of: swipeActionPullView)) == "UISwipeActionPullView" {
+            swipeActionPullView.frame.size.height = 30
+            swipeActionPullView.frame.origin.y = 7
+            swipeActionPullView.layer.cornerRadius = 15
+            swipeActionPullView.clipsToBounds = true
+          }
+        }
+    }
+    
 }
 
+
+extension CalendarViewController: CalendarDetailDelegate {
+    func removeEvent(id: String) {
+        deleteEvent(id: id)
+    }
+}
+
+
+extension CalendarViewController: PollDelegate {
+    func updatePolls() {
+        fetchPollData()
+    }
+}

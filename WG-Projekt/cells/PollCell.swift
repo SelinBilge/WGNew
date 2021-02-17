@@ -11,7 +11,7 @@ import UIKit
 class PollCell: UITableViewCell {
 
     @IBOutlet weak var pollTitle: UILabel!
-    @IBOutlet weak var pollButton: UIButton!
+    @IBOutlet weak var pollCheckmark: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

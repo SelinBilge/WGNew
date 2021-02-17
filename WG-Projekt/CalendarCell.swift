@@ -12,6 +12,7 @@ class CalendarCell: UITableViewCell {
 
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var eventDetail: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

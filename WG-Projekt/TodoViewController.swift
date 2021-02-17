@@ -35,6 +35,7 @@ var dateFormatterFB: DateFormatter = {
 class TodoViewController: UIViewController {
     //Array that stores the todo sectios
     private var todos: [Section] = []
+    private var chosenTodo: Todo!
     let db = Firestore.firestore()
 
     @IBOutlet weak var todoTable: UITableView!
@@ -118,6 +119,7 @@ class TodoViewController: UIViewController {
     }
     
     
+    // Delete a Todo and fetch data afterwards
     func deleteTodo(id: String, indexPath: IndexPath) {
         let ref = db.collection("todo").document("idx").collection("do").document(id)
         ref.delete() { err in
@@ -128,6 +130,20 @@ class TodoViewController: UIViewController {
                 self.fetchData()
             }
         }
+    }
+    
+    //Prepare to show detail view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "todoDetail") {
+            //get chosen variables and set them in destination vc
+            let vc = (segue.destination as! TodoDetailViewController)
+            vc.todo = chosenTodo
+        }
+    }
+    
+    //unwind from todo detail
+    @IBAction func unwindToTodo(segue: UIStoryboardSegue) {
+
     }
 
 }
@@ -168,12 +184,20 @@ extension TodoViewController : UITableViewDataSource {
     
     //Height of section footer
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        if (todos[section].entries.count == 0) {
+            return 80
+        }
         return 30
     }
     
     //Height of section header
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 55
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        chosenTodo = todos[indexPath.section].entries[indexPath.row]
+        performSegue(withIdentifier: "todoDetail", sender: nil)
     }
     
     // Delete Swipe Action Configuration
@@ -235,6 +259,36 @@ extension TodoViewController : UITableViewDataSource {
         }
         return cell
     }
+    
+    
+    //Footer creation
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        var text = ""
+        if (todos[section].entries.count == 0) {
+            switch section {
+            case 0:
+                text = "HEUTE KEINE TODOS"
+            case 1:
+                text = "DEMNÄCHST KEINE TODOS"
+            case 2:
+                text = "LISTE LEER"
+            default:
+                text = ""
+            }
+        }
+        
+        let footerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 55))
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 40, y: 0, width: footerView.frame.width-80, height: footerView.frame.height)
+        label.font = label.font.withSize(13)
+        label.text =  text
+        label.textAlignment = .center
+        label.textColor = UIColor.systemGray3
+        footerView.addSubview(label)
+        return footerView
+    }
+
     
     //Header creation
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
