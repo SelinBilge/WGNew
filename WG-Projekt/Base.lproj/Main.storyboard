@@ -811,7 +811,7 @@
             <objects>
                 <viewController id="9Zd-Lw-e9j" customClass="AddTodoController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8tR-Hc-Q0h">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aufgabe hinzufügen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKD-Tm-ev0">
@@ -1102,7 +1102,7 @@
             <objects>
                 <viewController id="7lg-qh-v9Y" customClass="AddPollViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GKu-9l-nxu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abstimmung erstellen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uez-85-zHw">
@@ -1244,7 +1244,7 @@
             <objects>
                 <viewController id="z8m-YW-snd" customClass="PollViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fzf-EN-tFj">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abstimmung" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJ9-qD-FO1">
@@ -1396,7 +1396,7 @@
             <objects>
                 <viewController id="m5l-TX-DRZ" customClass="CalendarDetailViewController" customModule="WG_Projekt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sma-rP-tJa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oui-RD-RV2">
@@ -1443,6 +1443,14 @@
                                                         <action selector="createEvent:" destination="m5l-TX-DRZ" eventType="touchUpInside" id="aeO-5r-njt"/>
                                                     </connections>
                                                 </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschreibung" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-Tk-dHz">
+                                                    <rect key="frame" x="93" y="145" width="228" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="228" id="UgB-Sc-CwO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-oh-rid">
                                                     <rect key="frame" x="93" y="96" width="150" height="34"/>
                                                     <constraints>
@@ -1452,41 +1460,55 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kalendereintrag erstellen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0G-bs-ejn">
-                                                    <rect key="frame" x="20" y="40" width="190" height="21"/>
+                                                    <rect key="frame" x="30" y="40" width="190" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="Wg2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="bW9-T2-GXr">
                                                     <rect key="frame" x="251" y="93" width="70" height="40"/>
+                                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="5hx-uG-xfV"/>
                                                         <constraint firstAttribute="width" constant="70" id="IEY-oK-61z"/>
                                                     </constraints>
                                                     <locale key="locale" localeIdentifier="de_AT"/>
                                                 </datePicker>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschreibung" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-Tk-dHz">
-                                                    <rect key="frame" x="93" y="145" width="228" height="34"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mz7-RN-92x" userLabel="border">
+                                                    <rect key="frame" x="30" y="288" width="354" height="1"/>
+                                                    <color key="backgroundColor" name="Wg"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="228" id="UgB-Sc-CwO"/>
+                                                        <constraint firstAttribute="height" constant="1" id="maM-Rs-FTV"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCT-wa-fUi" userLabel="border">
+                                                    <rect key="frame" x="30" y="5" width="354" height="1"/>
+                                                    <color key="backgroundColor" name="Wg"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="1" id="dbh-aP-xPl"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="k0G-bs-ejn" firstAttribute="leading" secondItem="Tbk-ka-HkR" secondAttribute="leading" constant="20" id="07F-qc-YXA"/>
+                                                <constraint firstItem="k0G-bs-ejn" firstAttribute="leading" secondItem="Tbk-ka-HkR" secondAttribute="leading" constant="30" id="07F-qc-YXA"/>
                                                 <constraint firstItem="kJZ-Tk-dHz" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="1pb-IU-WTp"/>
                                                 <constraint firstItem="bW9-T2-GXr" firstAttribute="leading" secondItem="ALd-oh-rid" secondAttribute="trailing" constant="8" id="3li-JN-aiC"/>
                                                 <constraint firstItem="kJZ-Tk-dHz" firstAttribute="top" secondItem="bW9-T2-GXr" secondAttribute="bottom" constant="12" id="F7f-hH-eqs"/>
+                                                <constraint firstAttribute="bottom" secondItem="Mz7-RN-92x" secondAttribute="bottom" constant="5" id="H3j-Nj-6Ss"/>
                                                 <constraint firstItem="k0G-bs-ejn" firstAttribute="top" secondItem="Tbk-ka-HkR" secondAttribute="top" constant="40" id="MfX-u7-F7B"/>
                                                 <constraint firstItem="kJZ-Tk-dHz" firstAttribute="leading" secondItem="ALd-oh-rid" secondAttribute="leading" id="Py8-td-Fuh"/>
                                                 <constraint firstItem="ALd-oh-rid" firstAttribute="top" secondItem="k0G-bs-ejn" secondAttribute="bottom" constant="35" id="QRb-Hy-RCQ"/>
+                                                <constraint firstItem="eCT-wa-fUi" firstAttribute="top" secondItem="Tbk-ka-HkR" secondAttribute="top" constant="5" id="SFw-an-2zm"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mz7-RN-92x" secondAttribute="trailing" constant="30" id="TAh-yx-cLl"/>
+                                                <constraint firstItem="eCT-wa-fUi" firstAttribute="leading" secondItem="Tbk-ka-HkR" secondAttribute="leading" constant="30" id="cso-xn-1IJ"/>
                                                 <constraint firstItem="kqA-ZG-0G9" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="i3S-TT-SH3"/>
+                                                <constraint firstItem="Mz7-RN-92x" firstAttribute="leading" secondItem="Tbk-ka-HkR" secondAttribute="leading" constant="30" id="m0r-u0-iyd"/>
                                                 <constraint firstItem="kqA-ZG-0G9" firstAttribute="top" secondItem="kJZ-Tk-dHz" secondAttribute="bottom" constant="35" id="sIp-Qi-QZR"/>
                                                 <constraint firstItem="bW9-T2-GXr" firstAttribute="centerY" secondItem="ALd-oh-rid" secondAttribute="centerY" id="swd-ob-4yh"/>
+                                                <constraint firstAttribute="trailing" secondItem="eCT-wa-fUi" secondAttribute="trailing" constant="30" id="uNC-ZH-AsA"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -1686,6 +1708,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" name="Wg2"/>
+                        <color key="selectedImageTintColor" name="Wg2"/>
                     </tabBar>
                     <connections>
                         <segue destination="jNP-wE-gZx" kind="relationship" relationship="viewControllers" id="6bt-OR-4ad"/>
@@ -1701,7 +1725,9 @@
         <scene sceneID="BR0-Qb-qNw">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="e95-ZD-6Uv" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Aufgaben" image="list.number" catalog="system" id="kIX-VH-2fM"/>
+                    <tabBarItem key="tabBarItem" title="Aufgaben" image="todo" id="kIX-VH-2fM">
+                        <inset key="imageInsets" minX="110" minY="110" maxX="110" maxY="110"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8OH-ao-5J5">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1720,7 +1746,9 @@
         <scene sceneID="paA-ri-osz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ms5-fM-ER0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Kalender" image="calendar" catalog="system" id="Qr8-LY-3np"/>
+                    <tabBarItem key="tabBarItem" title="Kalender" image="todolist" id="Qr8-LY-3np">
+                        <inset key="imageInsets" minX="14" minY="14" maxX="14" maxY="14"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oAW-uy-wT9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1739,7 +1767,9 @@
         <scene sceneID="K7O-wF-x0F">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jNP-wE-gZx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Einkaufen" image="cart" catalog="system" id="FEi-hI-cfa"/>
+                    <tabBarItem key="tabBarItem" title="Einkaufen" image="shoppinglist" id="FEi-hI-cfa">
+                        <inset key="imageInsets" minX="14" minY="14" maxX="14" maxY="14"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xfh-vf-bqY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -2097,21 +2127,21 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Xhc-o0-kHc"/>
+        <segue reference="cvc-2c-AH5"/>
         <segue reference="FN5-1z-DRU"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="calendar" catalog="system" width="128" height="106"/>
-        <image name="cart" catalog="system" width="128" height="102"/>
         <image name="circle" catalog="system" width="128" height="121"/>
         <image name="home_white" width="61" height="62"/>
-        <image name="list.number" catalog="system" width="128" height="97"/>
         <image name="lock_white" width="64" height="50"/>
         <image name="mail_white" width="64" height="50"/>
         <image name="name_white" width="63" height="50"/>
         <image name="person.3.fill" catalog="system" width="128" height="61"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
         <image name="profile" width="265" height="253"/>
+        <image name="shoppinglist" width="65" height="62"/>
+        <image name="todo" width="266" height="252"/>
+        <image name="todolist" width="62" height="62"/>
         <namedColor name="WG">
             <color red="0.0" green="0.56470588235294117" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -2129,9 +2159,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

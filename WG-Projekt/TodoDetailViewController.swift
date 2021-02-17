@@ -41,7 +41,7 @@ class TodoDetailViewController: UIViewController {
         bottomView.layer.shouldRasterize = true
         bottomView.layer.rasterizationScale = true ? UIScreen.main.scale : 1
         
-        //Tab recoginzer
+        //Tab recoginzer  
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
         transparentTop.addGestureRecognizer(tap)
         

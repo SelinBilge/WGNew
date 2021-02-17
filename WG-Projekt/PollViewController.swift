@@ -135,6 +135,8 @@ extension PollViewController: UITableViewDelegate, UITableViewDataSource {
             }
             if(poll.user["Paul"] == indexPath.row) {
                 cell.pollTitle.textColor = UIColor(displayP3Red: 230.0/255.0, green: 185.0/255.0, blue: 59.0/255.0, alpha: 1.0)
+            } else {
+                cell.pollTitle.textColor = UIColor.darkGray
             }
             
             //set properties
