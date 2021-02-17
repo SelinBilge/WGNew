@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zIF-B3-ZWZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THM-Na-Y9k">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -645,6 +645,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                                         <connections>
+                                            <outlet property="checkBox" destination="ZSm-YU-aMH" id="vNu-3P-CYF"/>
                                             <outlet property="person" destination="tpW-43-kQo" id="H4z-u5-wSl"/>
                                             <outlet property="title" destination="bkG-Ty-DdI" id="izW-Ge-dkd"/>
                                         </connections>
@@ -792,6 +793,9 @@
                                         <integer key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addTodo:" destination="9Zd-Lw-e9j" eventType="touchUpInside" id="g4n-oi-U3n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DCM-Mg-iBg"/>
@@ -821,9 +825,13 @@
                     </view>
                     <connections>
                         <outlet property="personCollection" destination="x9V-0I-636" id="Bt4-J2-Ajb"/>
+                        <outlet property="todoDate" destination="hc5-ik-d8Y" id="v5u-Lo-a1H"/>
+                        <outlet property="todoTitle" destination="esc-3R-zOG" id="WAs-Qb-5eS"/>
+                        <segue destination="aCY-U6-fOR" kind="unwind" identifier="unwindFromAddTodo" unwindAction="unwindToCalendarViewWithSegue:" id="AWe-1u-qdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wn2-mI-cQS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="aCY-U6-fOR" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="8804" y="1592"/>
         </scene>
@@ -1083,6 +1091,7 @@
                         <outlet property="pollDescription" destination="mpz-Dm-Fio" id="aHq-rW-bRn"/>
                         <outlet property="pollDue" destination="oeT-gv-cEA" id="XiK-vr-shz"/>
                         <outlet property="pollOptions" destination="akh-BF-fWn" id="g51-A3-H4c"/>
+                        <segue destination="bB7-ku-HhM" kind="unwind" identifier="unwindFromPoll" unwindAction="unwindToPollWithSegue:" id="NTj-Uu-cVH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76M-Sg-lX3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1110,14 +1119,8 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vhC-8Z-eVj">
-                                <rect key="frame" x="70" y="151" width="37.5" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="WTb-CN-XWy">
-                                <rect key="frame" x="85" y="209" width="244" height="599"/>
+                                <rect key="frame" x="85" y="191" width="244" height="617"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="N3F-GN-qzt">
                                     <rect key="frame" x="0.0" y="161.5" width="244" height="44"/>
@@ -1149,7 +1152,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CzD-q6-f7i" customClass="PollCell" customModule="WG_Projekt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollCell" id="CzD-q6-f7i" customClass="PollCell" customModule="WG_Projekt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="244" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CzD-q6-f7i" id="0TI-AA-37d">
@@ -1166,9 +1169,6 @@
                                                     <rect key="frame" x="214" y="11" width="20" height="22"/>
                                                     <color key="tintColor" name="Wg"/>
                                                     <state key="normal" image="circle" catalog="system"/>
-                                                    <connections>
-                                                        <action selector="pollButtonClicked:" destination="CzD-q6-f7i" eventType="touchUpInside" id="lQO-zm-NfU"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -1183,7 +1183,7 @@
                                             <outlet property="pollTitle" destination="LTE-uc-dtB" id="hAZ-da-TjK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="iJh-T0-h4h" customClass="PollResultCell" customModule="WG_Projekt" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pollResultCell" id="iJh-T0-h4h" customClass="PollResultCell" customModule="WG_Projekt" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="99.5" width="244" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iJh-T0-h4h" id="FgQ-cO-cRi">
@@ -1224,18 +1224,15 @@
                             <constraint firstItem="z2F-BW-Vxz" firstAttribute="top" secondItem="J6r-qR-Sdv" secondAttribute="top" constant="120" id="Itb-Gm-WoM"/>
                             <constraint firstItem="yJ9-qD-FO1" firstAttribute="top" secondItem="J6r-qR-Sdv" secondAttribute="top" constant="60" id="LaQ-z1-aip"/>
                             <constraint firstItem="z2F-BW-Vxz" firstAttribute="leading" secondItem="J6r-qR-Sdv" secondAttribute="leading" constant="70" id="Osc-oc-APM"/>
-                            <constraint firstItem="vhC-8Z-eVj" firstAttribute="leading" secondItem="z2F-BW-Vxz" secondAttribute="leading" id="T3b-Ri-LsU"/>
                             <constraint firstItem="J6r-qR-Sdv" firstAttribute="trailing" secondItem="WTb-CN-XWy" secondAttribute="trailing" constant="85" id="bnF-rr-psH"/>
                             <constraint firstItem="yJ9-qD-FO1" firstAttribute="centerX" secondItem="Fzf-EN-tFj" secondAttribute="centerX" id="dxl-jg-4d2"/>
-                            <constraint firstItem="WTb-CN-XWy" firstAttribute="top" secondItem="vhC-8Z-eVj" secondAttribute="bottom" constant="40" id="eP8-YC-pyp"/>
-                            <constraint firstItem="vhC-8Z-eVj" firstAttribute="top" secondItem="z2F-BW-Vxz" secondAttribute="bottom" constant="10" id="fs0-PG-Sk8"/>
                             <constraint firstItem="J6r-qR-Sdv" firstAttribute="bottom" secondItem="WTb-CN-XWy" secondAttribute="bottom" id="hb8-nm-UIf"/>
                             <constraint firstItem="WTb-CN-XWy" firstAttribute="leading" secondItem="J6r-qR-Sdv" secondAttribute="leading" constant="85" id="nge-Op-f0Y"/>
+                            <constraint firstItem="WTb-CN-XWy" firstAttribute="top" secondItem="z2F-BW-Vxz" secondAttribute="bottom" constant="50" id="sA5-t7-zj5"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pollButton" destination="cdU-eG-t0G" id="cMw-LR-vxk"/>
-                        <outlet property="pollDue" destination="vhC-8Z-eVj" id="jib-ai-TI4"/>
                         <outlet property="pollTable" destination="WTb-CN-XWy" id="XpK-4g-EIi"/>
                         <outlet property="pollTitle" destination="z2F-BW-Vxz" id="8Te-Ho-NCP"/>
                     </connections>
@@ -1262,7 +1259,7 @@
                                 <rect key="frame" x="0.0" y="70" width="414" height="738"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="uwh-IG-S1G" userLabel="footer">
-                                    <rect key="frame" x="0.0" y="132" width="414" height="301"/>
+                                    <rect key="frame" x="0.0" y="132" width="414" height="294"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kjf-Xu-18P">
@@ -1276,10 +1273,10 @@
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tbk-ka-HkR" userLabel="add">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="301"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="294"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqA-ZG-0G9">
-                                                    <rect key="frame" x="147" y="219" width="120" height="30"/>
+                                                    <rect key="frame" x="147" y="214" width="120" height="30"/>
                                                     <color key="backgroundColor" name="Wg2"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="2cr-0z-l7s"/>
@@ -1292,17 +1289,12 @@
                                                             <integer key="value" value="15"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="createEvent:" destination="m5l-TX-DRZ" eventType="touchUpInside" id="aeO-5r-njt"/>
+                                                    </connections>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschreibung" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-Tk-dHz">
-                                                    <rect key="frame" x="107" y="155" width="200" height="34"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="QkS-9X-Wio"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ALd-oh-rid">
-                                                    <rect key="frame" x="132" y="101" width="150" height="34"/>
+                                                    <rect key="frame" x="93" y="96" width="150" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="150" id="Yjl-X3-yUJ"/>
                                                     </constraints>
@@ -1315,18 +1307,36 @@
                                                     <color key="textColor" name="Wg2"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="compact" translatesAutoresizingMaskIntoConstraints="NO" id="bW9-T2-GXr">
+                                                    <rect key="frame" x="251" y="93" width="70" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="5hx-uG-xfV"/>
+                                                        <constraint firstAttribute="width" constant="70" id="IEY-oK-61z"/>
+                                                    </constraints>
+                                                    <locale key="locale" localeIdentifier="de_AT"/>
+                                                </datePicker>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Beschreibung" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kJZ-Tk-dHz">
+                                                    <rect key="frame" x="93" y="145" width="228" height="34"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="228" id="UgB-Sc-CwO"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray6Color"/>
                                             <color key="tintColor" systemColor="tertiarySystemBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="k0G-bs-ejn" firstAttribute="leading" secondItem="Tbk-ka-HkR" secondAttribute="leading" constant="20" id="07F-qc-YXA"/>
-                                                <constraint firstItem="kqA-ZG-0G9" firstAttribute="top" secondItem="kJZ-Tk-dHz" secondAttribute="bottom" constant="30" id="6JR-fi-0aK"/>
-                                                <constraint firstItem="kJZ-Tk-dHz" firstAttribute="top" secondItem="ALd-oh-rid" secondAttribute="bottom" constant="20" id="6pE-bB-pb8"/>
-                                                <constraint firstItem="ALd-oh-rid" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="9Bl-8B-WgI"/>
-                                                <constraint firstItem="ALd-oh-rid" firstAttribute="top" secondItem="k0G-bs-ejn" secondAttribute="bottom" constant="40" id="CJJ-5A-zyV"/>
-                                                <constraint firstItem="kJZ-Tk-dHz" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="Jsv-l0-Vux"/>
+                                                <constraint firstItem="kJZ-Tk-dHz" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="1pb-IU-WTp"/>
+                                                <constraint firstItem="bW9-T2-GXr" firstAttribute="leading" secondItem="ALd-oh-rid" secondAttribute="trailing" constant="8" id="3li-JN-aiC"/>
+                                                <constraint firstItem="kJZ-Tk-dHz" firstAttribute="top" secondItem="bW9-T2-GXr" secondAttribute="bottom" constant="12" id="F7f-hH-eqs"/>
                                                 <constraint firstItem="k0G-bs-ejn" firstAttribute="top" secondItem="Tbk-ka-HkR" secondAttribute="top" constant="40" id="MfX-u7-F7B"/>
+                                                <constraint firstItem="kJZ-Tk-dHz" firstAttribute="leading" secondItem="ALd-oh-rid" secondAttribute="leading" id="Py8-td-Fuh"/>
+                                                <constraint firstItem="ALd-oh-rid" firstAttribute="top" secondItem="k0G-bs-ejn" secondAttribute="bottom" constant="35" id="QRb-Hy-RCQ"/>
                                                 <constraint firstItem="kqA-ZG-0G9" firstAttribute="centerX" secondItem="Tbk-ka-HkR" secondAttribute="centerX" id="i3S-TT-SH3"/>
+                                                <constraint firstItem="kqA-ZG-0G9" firstAttribute="top" secondItem="kJZ-Tk-dHz" secondAttribute="bottom" constant="35" id="sIp-Qi-QZR"/>
+                                                <constraint firstItem="bW9-T2-GXr" firstAttribute="centerY" secondItem="ALd-oh-rid" secondAttribute="centerY" id="swd-ob-4yh"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -1392,12 +1402,17 @@
                         <outlet property="addEventButton" destination="kjf-Xu-18P" id="v3d-Ky-9mJ"/>
                         <outlet property="addFooter" destination="Tbk-ka-HkR" id="n6I-6c-VKn"/>
                         <outlet property="eventDate" destination="Oui-RD-RV2" id="qdR-4p-Xcl"/>
+                        <outlet property="eventDatePicker" destination="bW9-T2-GXr" id="bZY-n1-Cwj"/>
+                        <outlet property="eventDescription" destination="kJZ-Tk-dHz" id="JJD-5V-sCs"/>
+                        <outlet property="eventTitle" destination="ALd-oh-rid" id="pIt-bp-9y7"/>
                         <outlet property="eventsTable" destination="hYE-Cg-Nj1" id="QWJ-R2-EmE"/>
+                        <segue destination="5jc-0c-5V8" kind="unwind" identifier="unwindToCalendar" unwindAction="unwindToCalendarWithSegue:" id="rSt-9A-hbb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mu7-yI-1xQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="5jc-0c-5V8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="8803" y="2370"/>
+            <point key="canvasLocation" x="8802.898550724638" y="2369.1964285714284"/>
         </scene>
         <!--Einkaufen-->
         <scene sceneID="oit-bO-Mqa">

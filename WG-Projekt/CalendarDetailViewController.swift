@@ -9,29 +9,61 @@
 import UIKit
 
 class CalendarDetailViewController: UIViewController {
-    var date: String!
+    var dateString: String!
     var events: [Event]!
     var hasEvents: Bool!
+    var newEvent: Event!
 
     @IBOutlet weak var eventsTable: UITableView!
     @IBOutlet weak var addFooter: UIView!
     
     @IBOutlet weak var addEventButton: UIButton!
     @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventTitle: UITextField!
+    @IBOutlet weak var eventDescription: UITextField!
+    @IBOutlet weak var eventDatePicker: UIDatePicker!
+    
+    var dateFormatterFS: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yyyy"
+        return formatter
+    }()
+    
+    var dateFormatterFB: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        return formatter
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         addFooter.isHidden = true
-        eventDate.text = date
+        eventDate.text = dateString
         eventsTable.delegate = self
         eventsTable.dataSource = self
         //eventsTable.tableFooterView = UIView.init()
     }
 
+    @IBAction func createEvent(_ sender: Any) {
+        if(eventTitle.text == "" || eventDescription.text == "") {
+            return
+        }
+        let timeDate = eventDatePicker.date
+        let timeDateString = dateFormatterFB.string(from: timeDate)
+        let chosenDateSring = dateFormatterFB.string(from: dateFormatterFS.date(from: dateString)!)
+        let newDateStrig = String(chosenDateSring.prefix(10) + timeDateString.suffix(6))
+        let newDate = dateFormatterFB.date(from: newDateStrig)
+        newEvent = Event(title: eventTitle.text!, date: newDate!, time: "", description: eventDescription.text!, id: "")
+        performSegue(withIdentifier: "unwindToCalendar", sender: nil)
+        
+    }
+    
     @IBAction func addEventClick(_ sender: Any) {
         addEventButton.isHidden = true
         addFooter.isHidden = false
     }
+    
+
 }
 
 

@@ -8,23 +8,39 @@
 
 import UIKit
 
+//Delegate for accessing the TodoViewController
+protocol TodoCellDelegate: class {
+    func checkEntry(index: IndexPath, id: String, done: Bool)
+}
+
 class TodoCell: UITableViewCell {
+    weak var delegate: TodoCellDelegate?
+    var id: String!
+    var index: IndexPath!
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var person: UILabel!
+    @IBOutlet weak var checkBox: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    //The check Entry method of the delegate is clicked
     @IBAction func doneClicked(_ sender: Any) {
+        var done = true
+        if(index.section == 2) {
+            done = false
+        }
+        delegate?.checkEntry(index: index, id: id, done: done)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
+    //Style of the cell
     override func layoutSubviews() {
             super.layoutSubviews()
             self.contentView.clipsToBounds = true
@@ -33,5 +49,6 @@ class TodoCell: UITableViewCell {
             //set the values for top,left,bottom,right margins
             let margins = UIEdgeInsets(top: 7, left: 0, bottom: 7, right: 0)
             contentView.frame = contentView.frame.inset(by: margins)
-        }
+    
+    }
 }
